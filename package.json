@@ -1,6 +1,5 @@
 {
-  "name": "gatsby-starter-minimal",
-  "version": "1.0.0",
+  "name": "CourseChat",
   "private": true,
   "scripts": {
     "start": "gatsby develop",
