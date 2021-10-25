@@ -1,4 +1,4 @@
-import * as React from "react"
+import { useEffect } from "react";
 import { navigate } from "gatsby"
 
 /* 
@@ -8,7 +8,7 @@ import { navigate } from "gatsby"
  */
 
 const NotFoundPage = () => {
-  navigate('/', { replace: true })
+  useEffect(() => navigate('/', { replace: true }), [])
   return null
 }
 
