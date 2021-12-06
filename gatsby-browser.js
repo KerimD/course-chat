@@ -3,7 +3,7 @@ import AuthWrapper from './src/components/AuthWrapper'
 import Layout from './src/components/Layout'
 import '@fontsource/roboto'
 
-export const wrapPageElement = ({ element }) =>
+export const wrapRootElement = ({ element }) =>
   <AuthWrapper>
     <Layout>
       {element}
