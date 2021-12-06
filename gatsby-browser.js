@@ -1,11 +1,9 @@
-import React from "react";
-import AuthWrapper from './src/components/AuthWrapper'
-import Layout from './src/components/Layout'
+import React, { useEffect } from 'react';
 import '@fontsource/roboto'
+import AuthWrapper from './src/components/AuthWrapper'
+import './src/layout.css'
 
 export const wrapRootElement = ({ element }) =>
   <AuthWrapper>
-    <Layout>
-      {element}
-    </Layout>
+    {element}
   </AuthWrapper>

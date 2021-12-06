@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
-// import { navigate } from "gatsby"
+import React, { useEffect } from 'react'
+import { navigate } from 'gatsby'
+import { user } from '../../user'
 
 const AuthWrapper = ({ children }) => {
   useEffect(() => {
-    // let path = window.location.pathname.substring(1)
-    // console.log(children)
+    let path = window.location.pathname.substring(1)
 
-    // if logged in
-    // navigate('/chat', { replace: true })
-    // if not logged in and path is chat
-    // navigate('/', { replace: true })
+    if (user.is) {
+      navigate('/chat', { replace: true })
+    } else if (path == 'chat') {
+      navigate('/', { replace: true })
+    }
   }, [])
 
   return (
