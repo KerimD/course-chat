@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import { user } from '../user'
 
 const LoginPage = () => {
@@ -8,11 +8,13 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    user.auth(email, pass, ({ err }) => err && alert(err))
+    user.auth(email, pass, ({ err }) =>
+      err ? alert(err) : navigate('/chat', { replace: true })
+    )
   }
 
   return (
-    <div className='signup'>
+    <main className='login-page'>
       <h1>Log in</h1>
       <form onSubmit={handleLogin}>
         <label>
@@ -37,7 +39,7 @@ const LoginPage = () => {
         </label>
         <input className='signup-submit' type='submit' value='Submit' />
       </form>
-    </div>
+    </main>
   )
 }
 

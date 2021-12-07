@@ -1,9 +1,6 @@
 :root {
-  --color: #1a202c;
-  --background: white;
-  --accent: #605bcb;
-  --light-gray: #9c9c9c;
-  --default-border-radius: 10px;
+  --accent: #4285F4;
+  --background: #b0dfe5;
 }
 
 * {
@@ -31,4 +28,9 @@ img, svg {
 
 button {
   font-family: 'Roboto';
+}
+
+main {
+  height: 100vh;
+  width: 100%;
 }
