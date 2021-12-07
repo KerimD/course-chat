@@ -10,6 +10,7 @@ const AddCourse = ({ updateCourses }) => {
   useEffect(() => {
     let tempCourses = []
     db.get('courses').map().once((course) => tempCourses.push(course))
+    updateCourses()
     // async is broken for once (I spent an hour on this lol)
     setTimeout(() => {
       setCourses(tempCourses)
@@ -18,9 +19,10 @@ const AddCourse = ({ updateCourses }) => {
 
   const createCourse = (e) => {
     e.preventDefault()
-    let tempNewCourse = { ...newCourse, uuid: uuidv4() }
+    const uuid = uuidv4()
+    let tempNewCourse = { ...newCourse, id: uuid }
     db.get('courses').set(tempNewCourse)
-    user.get('courses').set({ 'uuid': tempNewCourse.uuid })
+    user.get('courses').set({ id: uuid })
     updateCourses()
   }
 
@@ -29,13 +31,24 @@ const AddCourse = ({ updateCourses }) => {
   })
 
   const addCourse = (c) => {
-    user.get('courses').set({ 'uuid': c.uuid })
-    updateCourses()
+    let isNewCourse = true
+    user.get('courses').map().once(({ id }) => {
+      if (id === c.id) isNewCourse = false
+    })
+    // async is broken for once (I spent an hour on this lol)
+    setTimeout(() => {
+      if (!isNewCourse) {
+        alert('You are already in this course!')
+        return
+      }
+      user.get('courses').set({ 'id': c.id })
+      updateCourses()
+    }, 1000)
   }
 
   return (
     <div className='create-course-form-wrapper'>
-      <h1>Create a Course</h1>
+      {/* <h1>Create a Course</h1>
       <form onSubmit={createCourse}>
         <label>
           <p>Course Name</p>
@@ -58,7 +71,7 @@ const AddCourse = ({ updateCourses }) => {
         <label>
           <p>Course Number</p>
           <input
-            type='text'
+            type='number'
             name='number'
             required
             onChange={handleChange}
@@ -74,8 +87,8 @@ const AddCourse = ({ updateCourses }) => {
           />
         </label>
         <input className='create-course-submit' type='submit' value='Create' />
-      </form>
-      <div className='chats'>
+      </form> */}
+      {courses.length > 0 && <div className='chats'>
         <h1>Add a Course</h1>
         {courses.map((c) =>
           <button key={c.name} onClick={() => addCourse(c)}>
@@ -83,7 +96,7 @@ const AddCourse = ({ updateCourses }) => {
             <div>{c.name}</div>
           </button>
         )}
-      </div>
+      </div>}
     </div>
   )
 }

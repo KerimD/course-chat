@@ -52,7 +52,7 @@ form p {
   margin-bottom: 0.3rem;
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=text], input[type=number], input[type=email], input[type=password] {
   font-size: 18px;
   padding: 1rem;
   border: 0;
