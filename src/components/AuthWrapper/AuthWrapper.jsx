@@ -7,7 +7,7 @@ const AuthWrapper = ({ children }) => {
     let path = window.location.pathname.substring(1)
     if (user.is) {
       navigate('/chat', { replace: true })
-    } else if (path == 'chat') {
+    } else if (path === 'chat') {
       navigate('/', { replace: true })
     }
   }, [])

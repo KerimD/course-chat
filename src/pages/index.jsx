@@ -14,15 +14,13 @@ const LoginPage = () => {
   }
 
   return (
-    <main className='login-page'>
-      <h1>Log in</h1>
+    <main className='auth-page-wrapper'>
       <form onSubmit={handleLogin}>
         <label>
           <p>Your Email</p>
           <input
             type='email'
             name='email'
-            placeholder='doejohn@email.com'
             required
             onChange={e => setEmail(e.target.value)}
           />
@@ -32,12 +30,11 @@ const LoginPage = () => {
           <input
             type='password'
             name='password'
-            placeholder='***********'
             required
             onChange={e => setPass(e.target.value)}
           />
         </label>
-        <input className='signup-submit' type='submit' value='Submit' />
+        <input className='signup-submit' type='submit' value='Log in' />
       </form>
     </main>
   )

@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby clean && gatsby build"
+    "build": "gatsby clean && gatsby build",
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.1",
@@ -11,6 +12,7 @@
     "gatsby-plugin-react-svg": "^3.1.0",
     "gun": "^0.2020.1235",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "uuid": "^8.3.2"
   }
 }

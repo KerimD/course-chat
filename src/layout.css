@@ -28,9 +28,54 @@ img, svg {
 
 button {
   font-family: 'Roboto';
+  border: 0;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 main {
   height: 100vh;
   width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+form p {
+  margin-bottom: 0.3rem;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  font-size: 18px;
+  padding: 1rem;
+  border: 0;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  color: white;
+  background: var(--accent);
+  border: 0;
+  border-radius: 4px;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  background: #1a73e8;
+}
+
+.auth-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8ff;
 }

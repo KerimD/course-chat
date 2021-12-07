@@ -1,9 +1,11 @@
 .chat-page {
+  height: 100vh;
   display: flex;
+  align-items: stretch;
+  background: #e8e8ff;
 }
 
 .side-bar {
-  height: 100%;
   min-width: 12rem;
   max-width: 15rem;
   padding: 1rem 0;
@@ -22,41 +24,46 @@
 
 .chats button {
   font-size: 18px;
-  border: 0;
   padding: 1rem;
   text-align: left;
   background: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .chats button:hover {
-  background: lightgray;
+  background: white;
   cursor: pointer;
 }
 
-.chats .add-course-chats {
+.chats span {
+  font-size: 12px;
+  color: gray;
+}
+
+.chats .add-courses {
   font-size: 1rem;
   padding: 0;
   margin: 1rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   background: none;
 }
 
-.chats .add-course-chats:hover {
+.chats .add-courses:hover {
   background: none;
   color: var(--accent);
 }
 
-.add-course-chats:hover svg {
+.add-courses:hover svg {
   fill: var(--accent);
 }
 
 .logout {
-  font-size: 18px;
+  font-weight: 600;
   padding: 0.5rem 1rem;
-  border: 0;
-  border-radius: 6px;
   color: white;
   background: var(--accent);
 }

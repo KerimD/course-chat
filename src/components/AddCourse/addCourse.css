@@ -1,0 +1,14 @@
+.create-course-form-wrapper {
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.create-course-form-wrapper h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.create-course-form-wrapper form {
+  margin-bottom: 5rem;
+}
